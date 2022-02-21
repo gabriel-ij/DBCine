@@ -1,0 +1,14 @@
+CINEMA
+
+Objetivos: Realizar controle centralizado de filmes, sessões, clientes, funcionários, e do cinema em si
+
+Fases:
+
+1. Levantamento de requisitos
+2. Entidades e Relacionamentos
+3. Modelo ER
+4. Diagrama ER
+5. Dicionario de Dados
+6. Normalização
+7. Implementação
+8. Testes
