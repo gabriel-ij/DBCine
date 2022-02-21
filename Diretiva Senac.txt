@@ -1,0 +1,19 @@
+Sobre:
+
+Aplicação de um Projeto que articule as competências do curso diante de situações desafiadores proporcionando ao aluno a prática e o desenvolvimento do domínio técnico-científico, atitude empreendedora, visão crítica, atitude sustentável e colaborativa.
+
+
+Objetivo:
+
+Dimensionamento de solução de Banco de Dados com foco no perfil do cliente. Desafios que envolvam o atendimento a clientes com perfis diferenciados para utilização de soluções de banco de dados. Com base no perfil recebido, os alunos terão o desafio de efetuar o levantamento, criação e tunning necessários a este perfil. O desafio da proposta considera a dinâmica de uma simulação da atividade profissional ou estudos de caso em que os alunos problematizem e concretizem soluções adequadas à resolução do problema.
+
+
+Avaliação:
+
+A solução deve trazer aspectos inovadores no produto e na forma de apresentação, além gerar produtos de maior complexidade
+
+Indicadores para avaliação
+- Adota estratégias que evidenciam as Marcas Formativas Senac na resolução dos desafios apresentados.
+- Elabora síntese do Projeto Integrador, respondendo às especificações do tema gerador.
+- Apresenta os resultados do Projeto Integrador com coerência, coesão e criatividade, propondo soluções inovadoras a partir da visão crítica da atuação profissional no segmento.
+- Articula as competências do curso no desenvolvimento do Projeto Integrador.
