@@ -8,8 +8,7 @@ SELECT * FROM BILHETERIA;
 SELECT * FROM INGRESSO;
 SELECT * FROM CLIENTE;
 
--- CONSULTAS MARIA --
-
+-- *** CONSULTAS MARIA *** --
 -- 1. Relacionar as salas e os endereços físicos do cinema -- 
 
 select * from cinema c join sala s on c.CinemaId = s.CinemaId;
@@ -52,3 +51,109 @@ join sessao ss on ss.SalaId = b.SalaId
 join sala s on s.SalaId = ss.SalaId
 join ingresso i on i.SessaoId = ss.SessaoId
 join cinema c on c.CinemaId = s.CinemaId group by c.CinemaId;
+-- /*** CONSULTAS MARIA ***/ --
+
+
+-- *** CONSULTAS WENDELL *** --
+/*
+SELECT * FROM sala LIMIT 3;
+
+SELECT * FROM filme LIMIT 40;
+
+SELECT * FROM cliente LIMIT 100;
+
+SELECT * FROM filme ORDER BY titulo;
+
+SELECT * FROM sessao ORDER BY horario;
+
+SELECT * FROM ingresso ORDER BY DataCompra ASC;
+
+SELECT Titulo, Genero,Sinopse FROM filme GROUP BY FilmeId;
+
+SELECT Horario,Titulo FROM sessao GROUP BY SalaId;
+
+SELECT * FROM ingresso ORDER BY ClienteId DESC;
+
+SELECT * FROM cinema ORDER BY NomeCinema ASC;
+
+SELECT titulo FROM filme WHERE titulo LIKE'%H%';
+
+SELECT nomecliente FROM cliente WHERE nomecliente LIKE'%JOÃO%';
+
+
+SELECT PrecoId,diasemana, MAX(vendas) AS maiores_vendas
+   FROM bilheteria;
+   
+SELECT PrecoId,diasemana, MIN(vendas) AS menores_vendas
+   FROM bilheteria;
+
+SELECT clienteid,nomecliente FROM cliente
+	LEFT JOIN ingresso ON datacompra,clienteid;
+    
+SELECT ingressoid, COUNT(ingressoid) AS contar FROM ingresso GROUP BY ingressoid;
+
+SELECT precoingresso, precoid, COUNT(precoingresso) contar,
+       MIN(precoingresso) menorpreco, MAX(precoingresso) maiorpreco, AVG(precoingresso) mediapreco
+       FROM bilheteria GROUP BY precoid;
+       
+SELECT titulo, duracao, CASE
+WHEN DURAÇÃO > '150 MINUTOS' THEN 'Filme Demorado'
+WHEN DURAÇÃO < '150 MINUTOS' THEN 'Filme Curto'
+END
+FROM filme;
+
+SELECT precoingresso,diasemana, CASE
+WHEN vendas > '5 mil ingressos' THEN 'Dia de Boas Vendas'
+WHEN vendas < '5 mil ingressos' THEN 'Dia de Mal Vendas'
+END
+FROM bilheteria;
+
+SELECT ingressoid,datacompra, SUM(ingressoid) somar, CASE
+WHEN ingressoid >= '500 ingressos' THEN 'Ganha um brinde o Ingresso 501'
+END
+FROM ingresso;
+
+SELECT salaid,capacidade,numerosala, CASE
+WHEN Capacidade = '50%' THEN 'Parar Vendas'
+END
+FROM sala;
+*/
+-- /*** CONSULTAS WENDELL ***/ --
+
+
+-- *** CONSULTAS THALYTA *** --
+SELECT Titulo, FaixaEtaria FROM FILME 
+	WHERE FilmeId = 3;
+    
+SELECT DataCompra, PrecoId FROM Ingresso LIMIT 5, 7;
+
+SELECT horario, titulo FROM sessao 
+	WHERE SessaoId = 9 or Sessaoid = 15;
+    
+SELECT Horario, Titulo FROM sessao  WHERE SessaoId in (13, 2);
+    
+SELECT NomeCliente, DataCadastro FROM cliente ORDER BY DataCadastro desc;
+
+SELECT NomeCinema, Estado, SUM(Cinemaid) FROM cinema GROUP BY Estado;
+SELECT NomeCinema, Estado, AVG(Cinemaid) FROM cinema GROUP BY Estado ORDER BY NomeCinema;
+
+SELECT Genero, FaixaEtaria,
+		CASE
+			WHEN FaixaEtaria >= 18 THEN 'Adulto'
+            WHEN faixaEtaria > 12 THEN 'Adolescente'
+            WHEN faixaEtaria < 12 THEN 'Crianca'
+			END AS Indicação
+FROM filme GROUP BY faixaEtaria;
+
+SELECT cinemaId, NomeCinema, CONCAT(Cidade,' - ', Estado) as Local_Cinema FROM cinema;
+create view vw_LocalCine as SELECT cinemaId, NomeCinema, CONCAT(Cidade,' - ', Estado) as Local_Cinema FROM cinema;
+
+START transaction;
+use dbcine;
+select * from filme;
+UPDATE filme SET Duracao = 151 
+	Where FilmeId = 3;
+rollback;
+
+select NomeCliente, DataNasc from cliente limit 20, 1;
+-- /*** CONSULTAS THALYTA ***/ --
