@@ -16,7 +16,17 @@ INSERT INTO GENERO (Genero) VALUES
 	('Comédia/Terror'),
     ('Comédia/Romance')
 ;
+-- update 22.02.2022 [William]
+INSERT INTO GENERO (Genero) VALUES
+    ('Comédia/Infantil'),
+    ('Ação/Ficção'),
+    ('Aventura/Fantasia'),
+    ('Aventura/Ficção'),
+    ('Aventura/Infantil'),
+    ('Aventura/Musical')
+;
 
+-- *** FILMES *** --
 INSERT INTO FILME (Titulo, Genero, Duracao, AnoLancamento, Elenco, Sinopse, FaixaEtaria) VALUES
 	('Venom: Tempo de Carnificina', 'Ação', 105, 2021, 
     'Tom Hardy, Woody Harrelson, Michelle Williams', 
@@ -40,7 +50,7 @@ INSERT INTO FILME (Titulo, Genero, Duracao, AnoLancamento, Elenco, Sinopse, Faix
     'Livre')
 ;
 
--- update Thalyta
+-- update 20.02.2022 [Thalyta]
 INSERT INTO FILME (Titulo, Genero, Duracao, AnoLancamento, Elenco, Sinopse, FaixaEtaria) VALUES 
 ('Eduardo e Mônica', 'Romance', '114', 2022, 'Alice Braga, Gabriel Leone, Bruna Spínola e Victor Lamoglia',
 'Em um dia atípico, uma série de coincidências levam Eduardo a conhecer Mônica em uma festa. 
@@ -93,8 +103,7 @@ no duplo papel de detetive de Gotham City e do seu alter ego, o bilionário soli
 entre outros', 'Paul Atreides é um jovem brilhante, dono de um destino além de sua compreensão. Ele deve viajar
 para o planeta mais perigoso do universo para garantir o futuro de seu povo.', 14);
 
--- update Maria
-
+-- update 20.02.2022 [Maria]
 INSERT INTO `dbcine`.`FILME` (`Titulo`, `Genero`, `Duracao`, `AnoLancamento`, `Elenco`, `Sinopse`, `FaixaEtaria`) VALUES ('Morte no Nilo', 'Suspense', '127', '2022', 'Kenneth Branagh, Gal Gadot, Emma Mackey', 'Em Morte no Nilo, durante sua viagem de lua de mel pelo rio Nilo, o casal Linnet Ridgeway (Gal Gadot) e Simon Doyle (Armie Hammer), convidaram os entes mais queridos para embarcar no barco Karvak e celebrar a união do casal. Porém a rica herdeira é misteriosamente morta de noite e por quase todos os passageiros têm motivos para matá-la. Mas um dos convidados, por coincidência, é o mais famoso detetive do mundo, Hércules Poirot, que começa a investigar o caso.', '14');
 INSERT INTO `dbcine`.`FILME` (`Titulo`, `Genero`, `Duracao`, `AnoLancamento`, `Elenco`, `Sinopse`, `FaixaEtaria`) VALUES ('Spencer', 'Drama', '117', '2022', 'Kristen Stewart, Timothy Spall, Jack Nielen', 'Spencer é um longa cujo título faz referência ao sobrenome de solteira de Diana. Se passando nos anos 1990, Diana passa o feriado do Natal com a família real na propriedade de Sandringham, em Norfolk, Reino Unido. Apesar das bebidas, brincadeiras e comidas que Diana já sabe o script da realeza, mas esse final de ano vai ser diferente.', '12');
 INSERT INTO `dbcine`.`FILME` (`Titulo`, `Genero`, `Duracao`, `AnoLancamento`, `Elenco`, `Sinopse`, `FaixaEtaria`) VALUES ('O Beco do Pesadelo', 'Suspense', '140', '2022', 'Bradley Cooper, Cate Blanchett, Toni Collette', 'Em O Beco do Medo, quando o carismático, mas sem sorte, vigarista Stanton Carlisle (Bradley Cooper) acaba entrando para um \"circo dos horrores\" após perder tudo. Lá ele encontra a vidente Zeena (Toni Collette) e seu marido Pete (David Strathairn), que fazem um show de leitura fria e um engenhoso sistema de linguagem codificada para fazer parecer que ela tem poderes mentais extraordinários.', '16');
@@ -106,8 +115,77 @@ INSERT INTO `dbcine`.`FILME` (`Titulo`, `Genero`, `Duracao`, `AnoLancamento`, `E
 INSERT INTO `dbcine`.`FILME` (`Titulo`, `Genero`, `Duracao`, `AnoLancamento`, `Elenco`, `Sinopse`, `FaixaEtaria`) VALUES ('Afterimage', 'Drama', '98', '2017', 'Boguslaw Linda, Aleksandra Justa, Bronislawa Zamachowska', 'Wladyslaw Strzeminski (Boguslaw Linda), é um artista de vanguarda polonês que superou todas as dificuldades impostas pelas suas deficiências físicas - ele não possuía uma perna e um braço - e também o ódio, a indiferença e a crueldade dispensados pelas autoridades de seu país para se tornar um dos artistas mais reverenciados do século vinte, uma verdadeira força da natureza que batalhou com todas as forças para construir seu progressista e genial programa artístico.', '12');
 INSERT INTO `dbcine`.`FILME` (`Titulo`, `Genero`, `Duracao`, `AnoLancamento`, `Elenco`, `Sinopse`, `FaixaEtaria`) VALUES ('Deserto Particular', 'Drama', '125', '2021', 'Antonio Saboia, Luthero de Almeida, Thomas Aquino', 'Depois de cometer um erro que coloca sua carreira e honra na linha, Daniel parte para procurar Sara, uma mulher que conheceu na internet', '14');
 
+-- update 21.02.2022 [Wendell]
+INSERT INTO FILME (Titulo, Genero, Duracao, AnoLancamento, Elenco, Sinopse, FaixaEtaria) VALUES
+	('Harry Potter e a Pedra Filosofal', 'Aventura/Fantasia', 150, 2001, 
+    'Daniel Radcliffe, Rupert Grint, Emma Watson', 
+    'Harry Potter é um garoto órfão que vive infeliz com seus tios, os Dursleys. 
+	Ele recebe uma carta contendo um convite para ingressar em Hogwarts, uma famosa escola especializada em formar jovens bruxos. 
+	Inicialmente, Harry é impedido de ler a carta por seu tio, mas logo recebe a visita de Hagrid, o guarda-caça de Hogwarts, que chega para levá-lo até a escola. 
+	Harry adentra um mundo mágico que jamais imaginara, vivendo diversas aventuras com seus novos amigos, Rony Weasley e Hermione Granger.', 
+    'Livre'),
+    ('Avatar', 'Ação/Ficção', 162, 2009, 
+    'Sam Worthington, Zoë Saldaña, Michelle Rodriguez, Sigourney Weaver e Stephen Lang', 
+    'No exuberante mundo alienígena de Pandora vivem os Navi, seres que parecem ser primitivos, mas são altamente evoluídos. 
+    Como o ambiente do planeta é tóxico, foram criados os avatares, corpos biológicos controlados pela mente humana que se movimentam livremente em Pandora. 
+    Jake Sully, um ex-fuzileiro naval paralítico, volta a andar através de um avatar e se apaixona por uma Navi. Esta paixão leva Jake a lutar pela sobrevivência de Pandora.', 
+    '12'),
+	('O Rei Leão', 'Aventura/Musical', 120, 2019, 
+    'Donald Glover, Beyoncé, James Earl Jones, Chiwetel Ejiofor, Billy Eichner, Seth Rogen, John Oliver, John Kani e Alfre Woodard', 
+    'Traído e exilado de seu reino, o leãozinho Simba precisa descobrir como crescer e retomar seu destino como herdeiro real nas planícies da savana africana.', 
+    'Livre'),
+	('Jurassic World: O Mundo dos Dinossauros', 'Aventura/Ficção', 124, 2015, 
+    'Chris Pratt, Bryce Dallas Howard, Ty Simpkins, Nick Robinson', 
+    'O Parque dos Dinossauros está aberto para visitação, e o público tem a chance de ver de perto as mais diversas espécies. 
+     Porém, um desses animais, resultado de experiência genética, desenvolve alta inteligência e se torna uma ameaça para todos.', 
+    '12'),
+	('Coringa', 'Drama', 122, 2019, 
+    'Joaquin Phoenix, Robert De Niro, Zazie Beetz, Frances Conroy', 
+    'Isolado, intimidado e desconsiderado pela sociedade, o fracassado comediante Arthur Fleck inicia seu caminho como uma mente criminosa após assassinar três homens em pleno metrô. 
+     Sua ação inicia um movimento popular contra a elite de Gotham City, da qual Thomas Wayne é seu maior representante.', 
+    '16'),
+	('Batman vs Superman: A Origem da Justiça', 'Ação/Ficção', 151, 2016, 
+    'Ben Affleck, Henry Cavill, Amy Adams, Jesse Eisenberg, Diane Lane, Laurence Fishburne, Jeremy Irons, Holly Hunter e Gal Gadot', 
+    'O confronto entre Superman e Zod em Metrópolis fez a população mundial se dividir sobre a presença de extraterrestres na Terra. 
+    Enquanto muitos consideram Superman um novo deus, há aqueles que entendem ser extremamente perigosa a existência de um ser tão poderoso sem qualquer tipo de controle. Bruce Wayne é um dos que acreditam nesta segunda hipótese. 
+    Sob o manto de um Batman violento e obcecado, ele enfrenta Superman enquanto o mundo se pergunta que tipo de herói precisa.', 
+    '12'),
+	('Transformers: A Era da Extinção', 'Ação/Ficção', 165, 2014, 
+    'Mark Wahlberg, Nicola Peltz, Jack Reynor, Stanley Tucci', 
+    'Após a batalha entre os Autobots e os Decepticons, que arrasou Chicago, os gigantescos robôs alienígenas desapareceram. 
+    Atualmente, eles são caçados pelos humanos, que não desejam passar por apuros novamente. 
+    Porém, enquanto a humanidade tenta se recuperar dessa terrível batalha, uma nova ameaça paira sobre a Terra.', 
+    '12'),
+    ('Animais Fantásticos: Os Crimes de Grindelwald', 'Aventura/Fantasia', 134, 2018, 
+    'Eddie Redmayne, Johnny Depp, Katherine Waterston, Dan Fogler, Alison Sudol e Ezra Miller', 
+    'Newt Scamander reencontra os queridos amigos Tina Goldstein, Queenie Goldstein e Jacob Kowalski. 
+    Ele é recrutado pelo seu antigo professor em Hogwarts, Alvo Dumbledore, para enfrentar o terrível bruxo das trevas Gellert Grindelwald, 
+    que escapou da custódia da Macusa (Congresso Mágico dos EUA) e reúne seguidores, dividindo o mundo entre seres de magos sangue puro e seres não-mágicos.', 
+    '12'),
+	('007 - Sem Tempo para Morrer', 'Ação', 163, 2021, 
+    'Daniel Craig, Léa Seydoux, Rami Malek', 
+    'James Bond deixa o MI6 e se muda para a Jamaica, mas um antigo amigo aparece e pede sua ajuda para encontrar um cientista desaparecido. 
+    Bond mergulha no caso e percebe que a busca é, na verdade, uma corrida para salvar o mundo.', 
+    '14'),
+	('Missão: Impossível - Efeito Fallout', 'Ação', 148, 2018, 
+    'Tom Cruise, Rebecca Ferguson, Ving Rhames, Simon Pegg, Michelle Monaghan, Alec Baldwin e Sean Harris', 
+    'Em uma perigosa tarefa para recuperar plutônio roubado, Ethan Hunt opta por salvar sua equipe em vez de completar a missão. 
+    Com isso, armas nucleares caem nas mãos de agentes altamente qualificados e que pertencem a uma rede mortal que deseja destruir a civilização. 
+    Agora, com o mundo em risco, Ethan e sua equipe da IMF são forçados a aliar-se a um obstinado agente da CIA.', 
+    '14'),
+    ('Procurando Dory', 'Aventura/Infantil', 97, 2016, 
+    'Ellen DeGeneres, Albert Brooks, Willem Dafoe, Ed O Neill', 
+    'Um ano após ajudar Marlin a reencontrar seu filho Nemo, Dory relembra sua amada família. 
+    Com saudades, decide fazer de tudo para reencontrá-los. Ela acaba esbarrando com amigos do passado e cai nas perigosas mãos dos humanos.', 
+    'Livre'),
+    ('Zootopia: Essa Cidade é o Bicho', 'Comédia/Infantil', 108, 2016, 
+    'Ginnifer Goodwin, Jason Bateman, Idris Elba, J.K. Simmons', 
+    'Em uma cidade de animais, uma raposa falante se torna uma fugitiva ao ser acusada de um crime que não cometeu. 
+    O principal policial do local, o incontestável coelho, sai em sua busca.', 
+    'Livre');
+-- /*** FILMES ***/ --
 
-
+-- *** SESSÕES *** --
 INSERT INTO SESSAO (Horario, Titulo, CinemaId, SalaId) VALUES
 	-- algumas sessões em Brasília
 	('2021-01-10 17:15:00', 'Venom: Tempo de Carnificina', '73.354.942/0001-41', 'DF05'),
@@ -125,3 +203,4 @@ INSERT INTO SESSAO (Horario, Titulo, CinemaId, SalaId) VALUES
 	('2021-01-13 21:15:00', 'Venom: Tempo de Carnificina', '27.288.665/0001-07', 'RJ06'),
 	('2021-01-13 21:15:00', 'Homem Aranha: Longe de Casa', '27.288.665/0001-07', 'RJ07')
 ;
+-- /*** SESSÕES ***/ --
