@@ -55,7 +55,6 @@ join cinema c on c.CinemaId = s.CinemaId group by c.CinemaId;
 
 
 -- *** CONSULTAS WENDELL *** --
-/*
 SELECT * FROM sala LIMIT 3;
 
 SELECT * FROM filme LIMIT 40;
@@ -81,10 +80,10 @@ SELECT titulo FROM filme WHERE titulo LIKE'%H%';
 SELECT nomecliente FROM cliente WHERE nomecliente LIKE'%JOÃO%';
 
 
-SELECT PrecoId,diasemana, MAX(vendas) AS maiores_vendas
+SELECT precoid,diasemana, MAX(precoid) AS maiores_vendas
    FROM bilheteria;
    
-SELECT PrecoId,diasemana, MIN(vendas) AS menores_vendas
+SELECT precoId,diasemana, MIN(precoid) AS menores_vendas
    FROM bilheteria;
 
 SELECT clienteid,nomecliente FROM cliente
@@ -94,30 +93,29 @@ SELECT ingressoid, COUNT(ingressoid) AS contar FROM ingresso GROUP BY ingressoid
 
 SELECT precoingresso, precoid, COUNT(precoingresso) contar,
        MIN(precoingresso) menorpreco, MAX(precoingresso) maiorpreco, AVG(precoingresso) mediapreco
-       FROM bilheteria GROUP BY precoid;
+       FROM bilheteria GROUP BY precoingresso;
        
 SELECT titulo, duracao, CASE
 WHEN DURAÇÃO > '150 MINUTOS' THEN 'Filme Demorado'
 WHEN DURAÇÃO < '150 MINUTOS' THEN 'Filme Curto'
-END
+END AS 'Duração Filme'
 FROM filme;
 
 SELECT precoingresso,diasemana, CASE
 WHEN vendas > '5 mil ingressos' THEN 'Dia de Boas Vendas'
 WHEN vendas < '5 mil ingressos' THEN 'Dia de Mal Vendas'
-END
+END AS 'Total de Vendas'
 FROM bilheteria;
 
 SELECT ingressoid,datacompra, SUM(ingressoid) somar, CASE
 WHEN ingressoid >= '500 ingressos' THEN 'Ganha um brinde o Ingresso 501'
-END
+END AS 'Brinde'
 FROM ingresso;
 
 SELECT salaid,capacidade,numerosala, CASE
 WHEN Capacidade = '50%' THEN 'Parar Vendas'
-END
+END AS 'Vendas do COVID'
 FROM sala;
-*/
 -- /*** CONSULTAS WENDELL ***/ --
 
 
