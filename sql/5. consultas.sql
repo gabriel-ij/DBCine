@@ -8,50 +8,58 @@ SELECT * FROM BILHETERIA;
 SELECT * FROM INGRESSO;
 SELECT * FROM CLIENTE;
 
--- *** CONSULTAS MARIA *** --
--- 1. Relacionar as salas e os endereços físicos do cinema -- 
+-- *** CONSULTAS THALYTA *** --
+USE DBCINE;
 
-select * from cinema c join sala s on c.CinemaId = s.CinemaId;
+-- Retornar as colunas titulo e faixa etária da tabela filme linha 3.
+SELECT Titulo, FaixaEtaria FROM FILME 
+	WHERE FilmeId = 3;
+    
+-- Retornar as colunas DataCompra, PrecoId da tabela ingresso limitado a 7 linhas.    
+SELECT DataCompra, PrecoId FROM Ingresso LIMIT 5, 7;
 
--- 2. Na intenção de setorizar melhor as informações, disponibilizar os filmes disponíveis de acordo com o gênero --
--- Exemplo --
-select * from filme where genero = "Suspense";
+-- Retornar as colunas horario, titulo da tabela sessao onde SessaoId pode ser 9 ou 15;
+SELECT horario, titulo FROM sessao 
+	WHERE SessaoId = 9 or Sessaoid = 15;
+    
+-- Retornar as colunas Horario e Titulo da tabela sessao onde SessaoId é 13 e 2.   
+SELECT Horario, Titulo FROM sessao  WHERE SessaoId in (13, 2);
+ 
+-- Retornar as colunas NomeCliente, DataCadastro da tabela cliente ordernado por DataCadastro.  
+SELECT NomeCliente, DataCadastro FROM cliente ORDER BY DataCadastro desc;
 
--- 3. Expectadores (detalhado) de determinado filme --
+/* Utilizar as funções SUM E AVG para retornar as informações relativas a soma e média dos cinemas 
+no estado do DF e RJ além de agrupar e ordenar; */
+ 
+SELECT NomeCinema, Estado, SUM(Cinemaid) FROM cinema GROUP BY Estado;
+SELECT NomeCinema, Estado, AVG(Cinemaid) FROM cinema GROUP BY Estado ORDER BY NomeCinema;
 
-select c.ClienteId,c.NomeCliente,i.IngressoId,s.Titulo,s.Horario from sessao s 
-join ingresso i on s.SessaoId = i.SessaoId
-join cliente c on c.ClienteId = i.ClienteId;
+/* utilizar a instrução 'CASE' para retornar um valor, nesse caso são os valores 
+Adulto, adolescente e criança em relação a indicação do filme.*/
+SELECT Genero, FaixaEtaria,
+		CASE
+			WHEN FaixaEtaria >= 18 THEN 'Adulto'
+            WHEN faixaEtaria > 12 THEN 'Adolescente'
+            WHEN faixaEtaria < 12 THEN 'Crianca'
+			END AS Indicação
+FROM filme GROUP BY faixaEtaria;
 
--- 4. Expectadores de cada sessão  --
+-- Utilizar o comando 'CONCAT' para unificar as informações e depois criar uma view.
+SELECT cinemaId, NomeCinema, CONCAT(Cidade,' - ', Estado) as Local_Cinema FROM cinema;
+create view vw_LocalCine as SELECT cinemaId, NomeCinema, CONCAT(Cidade,' - ', Estado) as Local_Cinema FROM cinema;
 
-select s.SessaoId,count(i.IngressoId) as Expectadores from filme f
-join sessao s on s.Titulo = f.Titulo
-join ingresso i on i.SessaoId = s.SessaoId group by s.SessaoId;
+/* Iniciar uma transação, alterar uma informação na linha tabela filme
+e depois confirmar ou retornar a informação anterior.*/
+START transaction;
+use dbcine;
+select * from filme;
+UPDATE filme SET Duracao = 151 
+	Where FilmeId = 3;
+rollback;
 
--- 5. Filmes mais assistidos --
-
-select * from ingresso;
-
-select f.FilmeId,f.Titulo, count(IngressoId) as Expectadores from filme f 
-join sessao s on s.Titulo = f.Titulo
-join ingresso i on s.SessaoId = i.SessaoId group by f.FilmeId;
-
--- 6. RECEITA	 GERADO POR CADA FILME --
-select count(IngressoId) from ingresso;
-
-select s.Titulo,concat("R$",sum(b.PrecoIngresso)) as Receita from bilheteria b
-join sessao s on s.SalaId = b.SalaId 
-join ingresso i on i.SessaoId = s.SessaoId group by s.Titulo;
-
--- 7. RECEITA DE CADA FILIAL COM A VENDA DE INGRESSOS --
-
-select c.CinemaId,c.NomeCinema, concat("R$",sum(b.PrecoIngresso)) as Receita from bilheteria b
-join sessao ss on ss.SalaId = b.SalaId
-join sala s on s.SalaId = ss.SalaId
-join ingresso i on i.SessaoId = ss.SessaoId
-join cinema c on c.CinemaId = s.CinemaId group by c.CinemaId;
--- /*** CONSULTAS MARIA ***/ --
+-- Retornar as colunas NomeCliente e DataNasc da tabela cliente, limitado a linha 20 e 1 linha.
+select NomeCliente, DataNasc from cliente limit 20, 1;
+-- /*** CONSULTAS THALYTA ***/ --
 
 
 -- *** CONSULTAS WENDELL *** --
@@ -119,39 +127,48 @@ FROM sala;
 -- /*** CONSULTAS WENDELL ***/ --
 
 
--- *** CONSULTAS THALYTA *** --
-SELECT Titulo, FaixaEtaria FROM FILME 
-	WHERE FilmeId = 3;
-    
-SELECT DataCompra, PrecoId FROM Ingresso LIMIT 5, 7;
+-- *** CONSULTAS MARIA *** --
+-- 1. Relacionar as salas e os endereços físicos do cinema -- 
 
-SELECT horario, titulo FROM sessao 
-	WHERE SessaoId = 9 or Sessaoid = 15;
-    
-SELECT Horario, Titulo FROM sessao  WHERE SessaoId in (13, 2);
-    
-SELECT NomeCliente, DataCadastro FROM cliente ORDER BY DataCadastro desc;
+select * from cinema c join sala s on c.CinemaId = s.CinemaId;
 
-SELECT NomeCinema, Estado, SUM(Cinemaid) FROM cinema GROUP BY Estado;
-SELECT NomeCinema, Estado, AVG(Cinemaid) FROM cinema GROUP BY Estado ORDER BY NomeCinema;
+-- 2. Na intenção de setorizar melhor as informações, disponibilizar os filmes disponíveis de acordo com o gênero --
+-- Exemplo --
+select * from filme where genero = "Suspense";
 
-SELECT Genero, FaixaEtaria,
-		CASE
-			WHEN FaixaEtaria >= 18 THEN 'Adulto'
-            WHEN faixaEtaria > 12 THEN 'Adolescente'
-            WHEN faixaEtaria < 12 THEN 'Crianca'
-			END AS Indicação
-FROM filme GROUP BY faixaEtaria;
+-- 3. Expectadores (detalhado) de determinado filme --
 
-SELECT cinemaId, NomeCinema, CONCAT(Cidade,' - ', Estado) as Local_Cinema FROM cinema;
-create view vw_LocalCine as SELECT cinemaId, NomeCinema, CONCAT(Cidade,' - ', Estado) as Local_Cinema FROM cinema;
+select c.ClienteId,c.NomeCliente,i.IngressoId,s.Titulo,s.Horario from sessao s 
+join ingresso i on s.SessaoId = i.SessaoId
+join cliente c on c.ClienteId = i.ClienteId;
 
-START transaction;
-use dbcine;
-select * from filme;
-UPDATE filme SET Duracao = 151 
-	Where FilmeId = 3;
-rollback;
+-- 4. Expectadores de cada sessão  --
 
-select NomeCliente, DataNasc from cliente limit 20, 1;
--- /*** CONSULTAS THALYTA ***/ --
+select s.SessaoId,count(i.IngressoId) as Expectadores from filme f
+join sessao s on s.Titulo = f.Titulo
+join ingresso i on i.SessaoId = s.SessaoId group by s.SessaoId;
+
+-- 5. Filmes mais assistidos --
+
+select * from ingresso;
+
+select f.FilmeId,f.Titulo, count(IngressoId) as Expectadores from filme f 
+join sessao s on s.Titulo = f.Titulo
+join ingresso i on s.SessaoId = i.SessaoId group by f.FilmeId;
+
+-- 6. RECEITA	 GERADO POR CADA FILME --
+select count(IngressoId) from ingresso;
+
+select s.Titulo,concat("R$",sum(b.PrecoIngresso)) as Receita from bilheteria b
+join sessao s on s.SalaId = b.SalaId 
+join ingresso i on i.SessaoId = s.SessaoId group by s.Titulo;
+
+-- 7. RECEITA DE CADA FILIAL COM A VENDA DE INGRESSOS --
+
+select c.CinemaId,c.NomeCinema, concat("R$",sum(b.PrecoIngresso)) as Receita from bilheteria b
+join sessao ss on ss.SalaId = b.SalaId
+join sala s on s.SalaId = ss.SalaId
+join ingresso i on i.SessaoId = ss.SessaoId
+join cinema c on c.CinemaId = s.CinemaId group by c.CinemaId;
+-- /*** CONSULTAS MARIA ***/ --
+
