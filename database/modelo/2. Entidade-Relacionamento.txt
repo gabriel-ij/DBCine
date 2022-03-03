@@ -1,0 +1,61 @@
+
+CINEMA tem BILHETERIA
+CINEMA contém SALA
+BILHETERIA dispõe SESSÃO
+BILHETERIA vende BILHETE
+SESSÃO reproduz FILME
+CLIENTE compra BILHETE
+
+ATRIBUTOS
+
+CINEMA
+CinemaId
+NomeCinema
+Endereco
+Telefone
+
+SALA
+SalaId
+Capacidade
+3D
+
+FILME
+FilmeId
+Titulo
+Sinopse
+Elenco
+Genero
+Duracao
+AnoLancamento
+FaixaEtaria
+PeriodoExibicao
+
+SESSAO
+SessaoId
+Horario
+3D
+Titulo (--> FILME)
+SalaId (--> SALA)
+
+BILHETERIA
+PrecoId
+DiaSemana
+PrecoIngresso
+TipoSala (--> SALA)
+3D (--> SESSAO)
+CinemaId (--> CINEMA)
+
+CLIENTE
+ClienteId
+NomeCliente
+DataNasc
+DataCadastro
+
+INGRESSO
+BilheteId
+DataCompra
+ClienteId (--> CLIENTE)
+Titulo (--> FILME)
+Horario (--> SESSAO)
+SalaId (--> SALA)
+3D (--> SESSAO)

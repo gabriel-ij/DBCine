@@ -1,0 +1,31 @@
+CINEMA
+Regras do Negócio
+
+- o cinema é composto por filiais, cada uma com cnpj e nome únicos
+
+- filme deve ter código de identificação único, assim como sala e sessão
+- filme deve ser registrado com o titulo, sinopse, elenco, genero, duração, ano de lançamento, faixa etária e período de exibição
+
+- sessão contém o título do filme, horário, o tipo de sessão e o número da sala
+- há dois tipos de sessão: 2D ou 3D
+- há tipos específicos de sala: XD, DBOX
+- sala tem capacidade específica, que é o número de poltronas
+
+- bilheteria age como tabela de preços
+- bilheteria deve conter os preços
+- os preços dependem somente do dia da semana, do tipo de sessão e do tipo de sala, não havendo discriminação de preço por horário do dia
+
+- cliente deve ter cadastro no sistema
+
+- ingresso deve ter um identificador único, e devem constar informações sobre a data da compra, o titulo do filme, horario da sessão, numero da sala, e tipo de sessão, além da identificação do cliente
+
+CINEMA
+SALA
+FILME
+SESSÃO
+BILHETERIA
+CLIENTE
+INGRESSO
+FUNCIONARIO
+
+
