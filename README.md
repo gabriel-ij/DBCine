@@ -10,9 +10,16 @@ Projeto feito durante o curso de Administrador de Banco de Dados, no Senac-DF.
 O mercado teatral mundial arrecadou 42 bilhões de dólares há apenas dois anos atrás, e ao incluir a receita de bilheteria e entretenimento doméstico, a indústria cinematográfica global em 2018 valia 136 bilhões de dólares . E apesar da produção de filmes ter sido fortemente atingida pela pandemia, com cinemas sendo fechados e centenas de filmes adiados, a industria continuou a se desenvolver com a ascenção dos serviços de streaming.
 	A lucratividade de um estúdio de cinema depende crucialmente da escolha dos projetos de filme certos e do envolvimento da gestão certa e das equipes criativas (elenco, direção, design visual, trilha sonora, fotografia, figurino, cenografia, edição e muitas especialidades adicionais), mas também depende muito da escolha da escala e abordagem corretas para a promoção de filmes, controle sobre as receitas por meio de tecnologias como gerenciamento de direitos digitais (DRM), práticas contábeis sofisticadas e gerenciamento de fluxos de receita auxiliares; no extremo, para uma grande franquia de mídia centrada no filme, o próprio filme pode ser apenas um grande componente de muitas grandes contribuições para a receita total da franquia. Por outro lado, visando a indústria de exibição de mídia, um sistema de banco de dados é uma ferramenta indispensável para gerenciar o modus operandi do negócio em si.
 	A indústria de cinemas lentamente retoma as engrenagens, e a Infame, Inc. deseja retomar os investimentos no setor. Para isso, nós da Startrati fomos contactados para modelar o banco de dados e o sistema web com o objetivo de dar subsídio à Infame, Inc. em gerenciar seu negócio. O projeto será chamado DBCine.
+
+
 ## Objetivos
 
 Desenvolver e implantar um sistema para cadastro, leitura, atualização e remoção dos filmes e programação.
+
+
+## Estrutura dos arquivos
+Em `database` encontra-se a modelagem, estrutura e carga do banco. Em `system` está o sistema administrador que conecta ao banco.
+
 ## Funcionalidades
 
 - Visualização simples, modificação, atualização e remoção de filiais, clientes, filmes, sessões e ingressos
