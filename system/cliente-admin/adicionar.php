@@ -17,39 +17,26 @@ include_once 'includes/header.php';
 
 <section class="section">
 	<div class="container">
-		<h3 class="title is-5">Novo Cinema</h3>
+		<h3 class="title is-5">Registrar Cliente</h3>
 		<form action="php_action/create.php" method="POST">
 			<div class="field">
-				<input class="input" type="text" name="CinemaId" placeholder="CNPJ">
+				<input class="input" type="text" name="ClienteId" placeholder="CPF">
 			</div>
 			<div class="field">
-				<input class="input" type="text" name="NomeCinema" placeholder="Nome">
+				<input class="input" type="text" name="NomeCliente" placeholder="Nome">
 			</div>
 			<div class="field">
-				<input class="input" type="tel" name="Telefone" placeholder="Telefone">
+				<input class="input" type="tel" name="DataNasc" placeholder="Data de Nascimento">
 			</div>
 			<div class="field">	
-				<input class="input" type="text" name="Pais" placeholder="País">
+				<input class="input" type="text" name="DataCadastro" placeholder="Data de Cadastro">
 			</div>
 			<div class="field">	
-				<input class="input" type="text" name="Estado" placeholder="Estado">
-			</div>
-			<div class="field">	
-				<input class="input" type="text" name="Cidade" placeholder="Cidade">
-			</div>
-			<div class="field">	
-				<input class="input" type="text" name="Bairro" placeholder="Bairro">
-			</div>
-			<div class="field">	
-				<input class="input" type="text" name="Cep" placeholder="Cep">
-			</div>
-			<div class="field">	
-				<input class="input" type="email" name="Email" placeholder="Email">
-			</div>
-			
+				<input class="input" type="text" name="Email" placeholder="Telefone">
+			</div>			
 			
 			<button class="button" type="submit" name="btn-cadastrar">Cadastrar</button>
-			<a href="index.php" class="button" type="submit">Lista de Cinemas</a>
+			<a href="index.php" class="button" type="submit">Lista de Clientes</a>
 		
 		</form>
 		
