@@ -54,7 +54,7 @@ Os feitos desse projeto podem ser usados para a construção de um site próprio
 
 ## Contribuições ao Banco de Dados
 
-<a href="https://github.com/MariaHRCastro">Maria Alice Ribeiro</a>
+<a href="https://github.com/MariaHRCastro">Maria  Ribeiro</a>
 
 <a href="https://github.com/ThalytaSN">Thalyta Sampaio Noronha</a>
 
