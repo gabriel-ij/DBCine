@@ -51,3 +51,11 @@ Para apagar o registro, basta clicar no botão vermelho. E clicar no botão verd
 
 A engenharia de requisitos e uma modelagem conceitual coerente com as regras de negócio são parte crucial para a fluidez das etapas da modelagem lógica e para a implantação física do banco de dados.
 Os feitos desse projeto podem ser usados para a construção de um site próprio para o cinema. Como seria feito? Usando o banco de dados como fonte para mostrar a programação de filmes, ingressos, informações sobre o sistema e afins. Tudo o que for necessário para uma boa experiência client-side.
+
+## Contribuições ao Banco de Dados
+
+<a href="https://github.com/MariaHRCastro">Maria Alice Ribeiro</a>
+
+<a href="https://github.com/ThalytaSN">Thalyta Sampaio Noronha</a>
+
+<a href="">Wendell Baresi</a>
