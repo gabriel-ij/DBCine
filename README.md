@@ -58,4 +58,4 @@ Os feitos desse projeto podem ser usados para a construção de um site próprio
 
 <a href="https://github.com/ThalytaSN">Thalyta Sampaio Noronha</a>
 
-<a href="">Wendell Baresi</a>
+<a href="https://github.com/wendellbaresi">Wendell Baresi</a>
