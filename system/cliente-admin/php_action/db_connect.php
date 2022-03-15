@@ -4,7 +4,7 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 // conexão com o banco de dados
 $servername = 'localhost';
 $username = 'root';
-$password = '579271mysql';
+$password = '';
 $db_name = 'dbcine';
 
 $connect = mysqli_connect($servername, $username, $password, $db_name);
