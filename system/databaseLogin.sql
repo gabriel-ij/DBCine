@@ -8,8 +8,8 @@ CREATE TABLE USUARIOS (
     Senha varchar(40)
 );
 
-INSERT INTO USUARIOS (Nome, Login, Senha) VALUES ('Gabriel Almeida', 'admin', sha1(123456));
-INSERT INTO USUARIOS (Nome, Login, Senha) VALUES ('Keanu Reeves', 'Keanu', sha1(579271));
+INSERT INTO USUARIOS (Nome, Login, Senha) VALUES ('Admin', 'admin', sha1(123456));
+INSERT INTO USUARIOS (Nome, Login, Senha) VALUES ('Keanu Reeves', 'Keanu', sha1('senha'));
     
     
 SELECT * FROM USUARIOS;
